@@ -12,12 +12,19 @@ public class mainll {
         //    System.out.println(LL.deleteLast());
         //     LL.display();
 
-        DLL LL = new DLL();
-        LL.insertFirst(3);
-         LL.insertFirst(2);
-          LL.insertFirst(8);
-           LL.insertFirst(17);
-           LL.insertLast(99);
+        // DLL LL = new DLL();
+        // LL.insertFirst(3);
+        //  LL.insertFirst(2);
+        //   LL.insertFirst(8);
+        //    LL.insertFirst(17);
+        //    LL.insertLast(99);
+        //    LL.display();
+
+        CLL LL= new CLL();
+        LL.insert(3);
+         LL.insert(5);
+          LL.insert(8);
+           LL.insert(9);
            LL.display();
     }
 }
