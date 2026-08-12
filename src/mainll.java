@@ -17,6 +17,7 @@ public class mainll {
          LL.insertFirst(2);
           LL.insertFirst(8);
            LL.insertFirst(17);
+           LL.insertLast(99);
            LL.display();
     }
 }
