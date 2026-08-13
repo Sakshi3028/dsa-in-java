@@ -105,6 +105,78 @@ System.out.println("END");
             this.value=value;
             this.next=next;
          }
+
+    }
+    //duplicates
+    public void duplicate(){
+        node Node = head;
+
+        while(Node.next!=null){
+            if(Node.next!=null && Node.value==Node.next.value){
+                Node.next=Node.next.next;
+                size--;
+            }else{
+                Node=Node.next;
+            }
+        }
+        tail=Node;
+        tail.next=null;
+
+    }
+
+    // merge sort
+    public static list merge(list first,list second){
+        node f=first.head;
+        node s=second.head;
+
+        list ans=new list();
+        while(f!=null && s!=null){
+            if(f.value< s.value){
+                ans.insertlast(f.value);
+                f=f.next;
+            }else{
+                ans.insertlast(s.value);
+                s=s.next;
+            }
+
+        }
+        while(f!=null){
+         ans.insertlast(f.value);
+         f=f.next;
+        }
+        while(s!=null){
+         ans.insertlast(s.value);
+         s=s.next;
+        }
+        return ans;
+    } 
+    public static void main(String[]args){
+        // list LL=new list();
+        // LL.insertlast(1);
+        // LL.insertlast(1);
+        // LL.insertlast(3);
+        // LL.insertlast(3);
+        // LL.insertlast(3);
+        // LL.insertlast(5);
+
+        // LL.display();
+        // LL.duplicate();
+        // LL.display();
+
+        list first=new list();
+        list second= new list();
+        first.insertlast(1);
+        first.insertlast(3);
+         first.insertlast(5);
+
+          second.insertlast(1);
+           second.insertlast(2);
+            second.insertlast(9);
+             second.insertlast(14);
+
+             list ans=list.merge(first,second);
+             ans.display();
+        
     }
 
 }
