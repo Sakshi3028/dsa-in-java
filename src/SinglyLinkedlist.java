@@ -52,6 +52,43 @@ public class SinglyLinkedlist {
         size++;
     }
 
+    // Insert at Position
+    public void insertAtposition(int position, int data) {
+
+        // Invalid position
+        if (position < 1 || position > size + 1) {
+            System.out.println("Insertion is not possible at this position");
+            return;
+        }
+
+        // Insert at head
+        if (position == 1) {
+            insertAthead(data);
+            return;
+        }
+
+        // Insert at tail
+        if (position == size + 1) {
+            insertAttail(data);
+            return;
+        }
+
+        // Insert in middle
+        Node newNode = new Node(data);
+
+        Node current = head;
+
+        // Go to node just before the required position
+        for (int i = 1; i < position - 1; i++) {
+            current = current.next;
+        }
+
+        newNode.next = current.next;
+        current.next = newNode;
+
+        size++;
+    }
+
     // Display Linked List
     public void display() {
 
@@ -76,6 +113,9 @@ public class SinglyLinkedlist {
 
         list.insertAttail(40);
         list.insertAttail(50);
+
+        // Insert 100 at position 3
+        list.insertAtposition(3, 100);
 
         list.display();
     }
