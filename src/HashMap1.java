@@ -27,7 +27,31 @@ public class HashMap1 {
         }
         private int searchInLL(k key,int bi){
             LinkedList<Node> ll =buckets[bi];
+            int di=0;
+            for(int i=0;i<ll.size();i++);{
+              if(ll.get(i).key == key){
+                return i;
+            }
+           
+            }
+             return -1;
         }
+       
+       public void  rehash(){
+          LinkedList<Node>oldbucktes[]=buckets;
+          buckets= new LinkedList[N+2];
+
+          for(int i=0;i<N*2;i++){
+           buckets[i]=new LinkedList<>();
+          }
+          for(int i=0;i<oldbuckets.length;i++){
+            LinkedList<Node> ll=oldBucket[i];
+            for(int j=0;j<ll.size();j++){
+                Node node=ll.get(j);
+                put (node.key,node.value);
+            }
+          }
+       }
         public void put(K key, V value){
            int bi= hashFunction(key);
            int di=searchInLL(key,bi);
@@ -40,7 +64,7 @@ public class HashMap1 {
            }
            double lamda=(double)n/N;
              if(lamda > 2.0){
-
+            rehash();
              }
         }
     }
