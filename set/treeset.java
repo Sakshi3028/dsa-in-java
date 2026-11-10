@@ -10,8 +10,11 @@ public class treeset {
         set.add(10);
         set.add(90);
         set.add(50);
-        System.out.println(set.first());
-        System.out.println(set.last());
+        // System.out.println(set.first());
+        // System.out.println(set.last());
+        // System.out.println(set.floor(80));
+        System.out.println(set.ceiling(80));
+        System.out.println(set.higher(80));
         //it is like a BST
 
         
