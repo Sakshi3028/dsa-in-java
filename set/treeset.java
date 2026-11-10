@@ -13,7 +13,9 @@ public class treeset {
         System.out.println(set.first());
         System.out.println(set.last());
         //it is like a BST
+
         
+
 
     }
     
